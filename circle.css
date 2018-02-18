@@ -1,12 +1,13 @@
 div {
-display: inline-block;
-margin-left: 5px;
-height: 100px;
-width: 100px;
-border-radius: 100%;
-border: 2px solid black;
+    display: inline-block;
+    margin-left: 5px;
+    height: 100px;
+    width: 100px;
+    border-radius: 100%;
+    border: 2px solid black;
 
-   }
+}
+
 .friend{
     border: 2px dashed #000000;
 }
@@ -18,5 +19,4 @@ border: 2px solid black;
 div p{
     text-align: center;
     margin-top: 40px;
-
 }
