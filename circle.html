@@ -12,12 +12,14 @@
     <button class ="color-btn" onclick = "orange()">Orange</button> 
     <button class ="color-btn" onclick = "changeColor()">Change Color</button> 
     <button class ="color-btn" onclick = "animateCircle()">Animate</button>  
+    <button class ="color-btn" onclick = "stopAnimation()">Stop Animation</button>  
 
 <script>
 
     var colors = ["red", "black", "yellow", "orange"];
     var i = 0;
     var circleElement = document.getElementById("circle");
+    var timer;
 
     function changeColor() {
         circleElement.style.background = colors[i];
@@ -28,7 +30,11 @@
     }
 
     function animateCircle() {
-       setInterval(changeColor, 500);        
+       timer = setInterval(changeColor, 500);        
+    }
+    
+    function stopAnimation() {
+        window.clearInterval(timer);
     }
 
     function red() {
