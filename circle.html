@@ -6,29 +6,31 @@
     <body>
      
         <div class="friend" id="circle"></div>
-    <button id="color-btn" onclick = "red()">Red</button>
-    <button id="color-btn" onclick = "black()">Black</button> 
-    <button id="color-btn" onclick = "yellow()">Yellow</button> 
-    <button id="color-btn" onclick = "orange()">Orange</button> 
-    <button id="color-btn" onclick = "changeColor()">Change Color</button> 
+    <button class ="color-btn" onclick = "red()">Red</button>
+    <button class ="color-btn" onclick = "black()">Black</button> 
+    <button class ="color-btn" onclick = "yellow()">Yellow</button> 
+    <button class ="color-btn" onclick = "orange()">Orange</button> 
+    <button class ="color-btn" onclick = "changeColor()">Change Color</button> 
+    <button class ="color-btn" onclick = "animateCircle()">Animate</button>  
 
 <script>
 
     var colors = ["red", "black", "yellow", "orange"];
     var i = 0;
-    
+    var circleElement = document.getElementById("circle");
 
     function changeColor() {
-        document.getElementById("circle").style.background = colors[i];
+        circleElement.style.background = colors[i];
         i++;
         if (i == 4) {
             i=0;
         }
     }
 
+    function animateCircle() {
+       setInterval(changeColor, 500);        
+    }
 
-
-    
     function red() {
         document.getElementById("circle").style.background = "red";    
     }
