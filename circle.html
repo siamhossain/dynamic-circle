@@ -16,7 +16,8 @@
 
 <script>
 
-    var colors = ["red", "black", "yellow", "orange"];
+    var colors = ["red", "black", "yellow", "orange", "Violet", "Tomato", "Gray"];
+    var totalColor = colors.length;
     var i = 0;
     var circleElement = document.getElementById("circle");
     var timer;
@@ -24,7 +25,7 @@
     function changeColor() {
         circleElement.style.background = colors[i];
         i++;
-        if (i == 4) {
+        if (i == totalColor) {
             i=0;
         }
     }
