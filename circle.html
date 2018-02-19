@@ -5,22 +5,33 @@
     </head>
     <body>
      
-        <div class="friend" id="circle"></div>
+    
+    <div class="friend" id="circle"></div><br><br><br>  
+    
     <button class ="color-btn" onclick = "red()">Red</button>
     <button class ="color-btn" onclick = "black()">Black</button> 
     <button class ="color-btn" onclick = "yellow()">Yellow</button> 
-    <button class ="color-btn" onclick = "orange()">Orange</button> 
-    <button class ="color-btn" onclick = "changeColor()">Change Color</button> 
+    <button class ="color-btn" onclick = "orange()">Orange</button><br><br><br> 
+    <button class ="color-btn" onclick = "changeColor()">Change Color</button><br><br><br> 
     <button class ="color-btn" onclick = "animateCircle()">Animate</button>  
-    <button class ="color-btn" onclick = "stopAnimation()">Stop Animation</button>  
+    <button class ="color-btn" onclick = "stopAnimation()">Stop Animation</button>
+    <div class="rectangle" id="rectangle"></div>
+    <button class ="rect-color-btn" onclick="animateRectangle()">Rectangle Animate</button>
+    <button class ="rect-color-btn" onclick="stopRectAnimation()">Stop Rect Animation</button>
+
+    
+    
 
 <script>
 
     var colors = ["red", "black", "yellow", "orange", "Violet", "Tomato", "Gray"];
     var totalColor = colors.length;
     var i = 0;
+    var j = 0;
     var circleElement = document.getElementById("circle");
+    var rectangleElement = document.getElementById("rectangle");
     var timer;
+    var timerRect;
 
     function changeColor() {
         circleElement.style.background = colors[i];
@@ -30,12 +41,27 @@
         }
     }
 
+    function changeRectColor() {
+        rectangleElement.style.background = colors[j];
+        j++;
+        if (j == totalColor) {
+            j=0;
+        }
+    }
+
     function animateCircle() {
        timer = setInterval(changeColor, 500);        
     }
     
+    function animateRectangle() {
+       timerRect = setInterval(changeRectColor, 500);        
+    }
+
     function stopAnimation() {
         window.clearInterval(timer);
+    }
+    function stopRectAnimation() {
+        window.clearInterval(timerRect);
     }
 
     function red() {
